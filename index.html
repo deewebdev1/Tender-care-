@@ -1,0 +1,1470 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head>  
+  <meta charset="UTF-8" />  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />  
+  <title>TenderCare Surrogacy Agency</title>  
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <script>
+    function animateHero() {
+  const title = document.getElementById("hero-title");
+  const text = document.getElementById("hero-text");
+  const buttons = document.querySelectorAll(".hero-actions a");
+
+  title.classList.add("show");
+  text.classList.add("show");
+  buttons.forEach(btn => btn.classList.add("show"));
+}
+
+// Call once on page load
+window.addEventListener("load", animateHero);
+
+// Optional: animate again when hero slide changes
+function updateHeroSlideContent(titleText, descText) {
+  const title = document.getElementById("hero-title");
+  const text = document.getElementById("hero-text");
+
+  // Hide old content
+  title.classList.remove("show");
+  text.classList.remove("show");
+
+  setTimeout(() => {
+    // Update text
+    title.textContent = titleText;
+    text.textContent = descText;
+
+    // Animate in
+    title.classList.add("show");
+    text.classList.add("show");
+  }, 400);
+}
+  </script>
+  <style>  
+  html{
+  scroll-padding-top:80px;
+}
+
+    :root{  
+      --pink:#f9e6ec;  
+      --gold:#c9a24d;  
+      --dark:#333;  
+      --shadow:0 10px 30px rgba(0,0,0,0.08);  
+    }  
+    
+    
+    html {
+  scroll-behavior: smooth;
+}
+
+
+    *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}  
+   body{
+  margin:0;
+  padding-top:70px; /* for fixed header */
+  font-family:'Poppins', sans-serif;
+  color:var(--dark);
+  line-height:1.7;
+  background:#fff;
+  scroll-behavior:smooth;
+  overflow-x:hidden;
+}  
+    section{padding:80px 7%;}  
+    h1,h2,h3{font-weight:600;}  
+    a{text-decoration:none;} 
+    
+    /* Buttons */  
+.btn{padding:14px 28px;border-radius:30px;font-weight:500;display:inline-block;transition:.3s;}  
+.btn-gold{background:var(--gold);color:#fff;}  
+.btn-gold:hover{opacity:.85;}  
+.btn-outline{border:2px solid var(--gold);color:var(--gold);}  
+.btn-outline:hover{background:var(--gold);color:#fff;}  
+
+/* Hero */  
+.hero{background:#fff;text-align:center;}  
+.hero h1{font-size:3rem;max-width:900px;margin:0 auto 20px;}  
+.hero p{max-width:900px;margin:0 auto 40px;font-size:1.05rem;}  
+.hero-actions{display:flex;gap:20px;justify-content:center;flex-wrap:wrap;}  
+
+/* About Section */
+.about {
+  background: #FADADD;
+  color: #fff;
+  padding: 80px 7%;
+}
+
+.about-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 1200px;
+  margin: auto;
+  gap: 50px;
+}
+
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: black;
+}
+
+.about-text p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: black;
+}
+
+/* Image Styling */
+.about-image {
+  flex: 1;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .about-image {
+    margin-top: 30px;
+  }
+}
+
+
+
+
+/* =========================
+   OUR SERVICES SECTION
+========================= */
+
+#services{
+  background:#fff;
+  position:relative;
+  font-size: 25px;
+}
+
+/* Grid */
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  margin-top:50px;
+}
+
+/* Card */
+.service-card{
+  position:relative; /* VERY IMPORTANT */
+  background:#ffffff;
+  border-radius:20px;
+  padding:45px 35px;
+  text-align:center;
+  overflow:hidden;
+  border:1px solid rgba(0,0,0,0.06);
+  transition:transform .45s ease, box-shadow .45s ease;
+}
+
+/* Soft pink hover layer */
+.service-card::before{
+  content:'';
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    135deg,
+    rgba(249,230,236,0.7),
+    rgba(255,255,255,0.6)
+  );
+  opacity:0;
+  transition:.45s ease;
+  z-index:-1;
+}
+
+/* Hover */
+.service-card:hover{
+  transform:translateY(-14px);
+  box-shadow:0 25px 50px rgba(0,0,0,0.12);
+  border-color:var(--gold);
+}
+
+.service-card:hover::before{
+  opacity:1;
+}
+
+/* =========================
+   ICON STYLES
+========================= */
+
+.service-icon{
+  width:70px;
+  height:70px;
+  margin:0 auto 20px;
+  border-radius:50%;
+  background:rgba(201,162,77,0.15);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  transition:.5s ease;
+}
+
+/* Icon image / svg */
+.service-icon img{
+  width:34px;
+  height:34px;
+}
+
+/* Icon animation on hover */
+.service-card:hover .service-icon{
+  transform:scale(1.15) rotate(8deg);
+  background:var(--gold);
+}
+
+/* =========================
+   TEXT
+========================= */
+
+.service-card h3{
+  font-size:1.15rem;
+  font-weight:600;
+  margin-bottom:10px;
+  color:var(--dark);
+}
+
+.service-card p{
+  font-size:.95rem;
+  line-height:1.7;
+  color:#555;
+}
+
+/* =========================
+   ENTRY ANIMATIONS
+========================= */
+
+.service-card{
+  opacity:0;
+  transform:translateY(40px);
+  animation:serviceIn .8s ease forwards;
+}
+
+.service-card:nth-child(1){animation-delay:.1s}
+.service-card:nth-child(2){animation-delay:.2s}
+.service-card:nth-child(3){animation-delay:.3s}
+.service-card:nth-child(4){animation-delay:.4s}
+.service-card:nth-child(5){animation-delay:.5s}
+.service-card:nth-child(6){animation-delay:.6s}
+
+@keyframes serviceIn{
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media(max-width:768px){
+  .service-card{
+    padding:35px 25px;
+  }
+}
+
+
+
+
+
+/* =========================
+   WHY CHOOSE US
+========================= */
+
+.why{
+  background:#fff;
+  padding:90px 7%;
+}
+
+.section-title{
+  text-align:center;
+  font-size:2.4rem;
+  margin-bottom:50px;
+  color:var(--dark);
+}
+
+/* Grid */
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:35px;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* Card */
+.why-card{
+  perspective:1400px;
+}
+
+/* Inner flip */
+.why-inner{
+  position:relative;
+  width:100%;
+  height:300px;
+  transition:transform .9s cubic-bezier(.4,.2,.2,1);
+  transform-style:preserve-3d;
+}
+
+.why-card:hover .why-inner{
+  transform:rotateY(180deg);
+}
+
+/* Front & Back */
+.why-front,
+.why-back{
+  position:absolute;
+  inset:0;
+  border-radius:22px;
+  backface-visibility:hidden;
+  overflow:hidden;
+}
+
+/* Front */
+.why-front{
+  background-size:cover;
+  background-position:center;
+}
+
+/* Overlay */
+.why-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(
+    to top,
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.15)
+  );
+  display:flex;
+  align-items:flex-end;
+  padding:28px;
+}
+
+.why-overlay h3{
+  color:#fff;
+  font-size:1.15rem;
+  font-weight:600;
+}
+
+/* Back (Glass Morphism) */
+.why-back{
+  transform:rotateY(180deg);
+  background:rgba(255,255,255,0.85);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:35px;
+  text-align:center;
+  box-shadow:0 25px 60px rgba(0,0,0,0.15);
+}
+
+.why-back p{
+  font-size:0.95rem;
+  line-height:1.8;
+  color:#444;
+}
+
+/* Mobile tweak */
+@media(max-width:768px){
+  .why-inner{
+    height:260px;
+  }
+}
+
+
+/* Social */  
+.social{text-align:center;}  
+.social-icons{display:flex;gap:25px;justify-content:center;margin-top:20px;flex-wrap:wrap;}  
+.social a{color:var(--gold);font-weight:500;}  
+
+/* Contact */  
+.contact{text-align:center;}  
+.contact p{margin:8px 0;}  
+
+/* WhatsApp Floating */  
+.whatsapp-float{  
+  position:fixed;bottom:25px;right:25px;background:#25d366;color:#fff;  
+  width:60px;height:60px;border-radius:50%;display:flex;align-items:center;  
+  justify-content:center;font-size:30px;box-shadow:var(--shadow);z-index:1000;  
+}  
+
+/* Fade-in */  
+.fade{opacity:0;transform:translateY(20px);transition:all .8s ease;}  
+.fade.show{opacity:1;transform:none;}  
+
+/* Header Styles */  
+.header{  
+  position:fixed;top:0;left:0;width:100%;height:70px;  
+  background:#fff;display:flex;align-items:center;justify-content:space-between;  
+  padding:0 7%;box-shadow:0 4px 20px rgba(0,0,0,0.05);z-index:2000;  
+}  
+.logo{font-weight:600;font-size:1.1rem;color:var(--gold);}  
+.nav{display:flex;gap:25px;}  
+.nav a{color:var(--dark);font-size:.95rem;position:relative;}  
+.nav a::after{content:'';position:absolute;left:0;bottom:-6px;width:100%;height:2px;background:var(--gold);transform:scaleX(0);transform-origin:left;transition:transform .35s ease;}  
+.nav a:hover::after,.nav a.active::after{transform:scaleX(1);}  
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;}  
+.hamburger span{width:25px;height:2px;background:var(--dark);transition:.3s;}  
+
+@media(max-width:900px){  
+  .nav{position:fixed;top:70px;right:-100%;background:var(--pink);height:calc(100vh - 70px);flex-direction:column;padding:40px;gap:20px;width:260px;transition:.4s;box-shadow:-10px 0 30px rgba(0,0,0,0.08);}   
+  .nav.show{right:0;}  
+  .hamburger{display:flex;}  
+}  
+
+@media(max-width:768px){  
+  .hero h1{font-size:2.2rem;}  
+}
+
+
+
+/* Hero Animations */
+.hero-animate {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-out;
+}
+
+.hero-animate.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Specific directions */
+.from-left { transform: translateX(-50px); }
+.from-left.show { transform: translateX(0); }
+
+.from-right { transform: translateX(50px); }
+.from-right.show { transform: translateX(0); }
+
+.from-top { transform: translateY(-50px); }
+.from-top.show { transform: translateY(0); }
+
+.from-bottom { transform: translateY(50px); }
+.from-bottom.show { transform: translateY(0); }
+
+/* Optional: stagger buttons */
+.hero-actions a {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease-out;
+}
+.hero-actions a.show {
+  opacity:1;
+  transform:translateY(0);
+}
+.hero-actions a:nth-child(1).show { transition-delay:0.2s; }
+.hero-actions a:nth-child(2).show { transition-delay:0.5s; }
+
+
+
+
+
+
+
+/* =========================
+   HOW IT WORKS
+========================= */
+
+.process-section{
+  background:var(--pink);
+  padding:90px 7%;
+}
+
+.section-title{
+  text-align:center;
+  font-size:2.4rem;
+  margin-bottom:50px;
+  color:var(--dark);
+}
+
+/* Grid */
+.steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:30px;
+  max-width:1200px;
+  margin:auto;
+}
+
+/* Step Card */
+.step{
+  position:relative;
+  background:#fff;
+  border-radius:20px;
+  padding:40px 30px;
+  text-align:center;
+  box-shadow:var(--shadow);
+  transition:transform .45s ease, box-shadow .45s ease;
+}
+
+/* Hover */
+.step:hover{
+  transform:translateY(-12px);
+  box-shadow:0 30px 60px rgba(0,0,0,0.12);
+}
+
+/* Step Number */
+.step span{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:60px;
+  height:60px;
+  margin-bottom:20px;
+  border-radius:50%;
+  background:rgba(201,162,77,0.15);
+  color:var(--gold);
+  font-size:22px;
+  font-weight:700;
+}
+
+/* Title */
+.step h4{
+  font-size:1.05rem;
+  font-weight:600;
+  margin-bottom:10px;
+  color:var(--dark);
+}
+
+/* Text */
+.step p{
+  font-size:.95rem;
+  line-height:1.7;
+  color:#555;
+}
+
+/* Subtle pink hover glow */
+.step::after{
+  content:'';
+  position:absolute;
+  inset:0;
+  border-radius:20px;
+  background:linear-gradient(
+    135deg,
+    rgba(249,230,236,0.7),
+    rgba(255,255,255,0.6)
+  );
+  opacity:0;
+  z-index:-1;
+  transition:.45s ease;
+}
+
+.step:hover::after{
+  opacity:1;
+}
+
+/* Responsive */
+@media(max-width:768px){
+  .section-title{
+    font-size:2rem;
+  }
+}
+
+
+
+/* =========================
+   FAQ SECTION
+========================= */
+
+
+
+.faq{
+  background:var(--pink);
+  padding:100px 7%;
+}
+
+.faq .section-title{
+  text-align:center;
+  color:black;
+  margin-bottom:60px;
+}
+
+.faq-container{
+  max-width:900px;
+  margin:auto;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+/* Item */
+.faq-item{
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 20px 45px rgba(0,0,0,0.15);
+}
+
+/* Question */
+.faq-question{
+  width:100%;
+  background:transparent;
+  border:none;
+  padding:22px 26px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  cursor:pointer;
+  font-size:1rem;
+  font-weight:600;
+  text-align:left;
+  color:#fff;
+}
+
+/* Arrow */
+.arrow{
+  width:10px;
+  height:10px;
+  border-right:2px solid #fff;
+  border-bottom:2px solid #fff;
+  transform:rotate(45deg);
+  transition:transform .4s ease;
+}
+
+/* Answer */
+.faq-answer{
+  max-height:0;
+  overflow:hidden;
+  background:rgba(255,255,255,0.95);
+  transition:max-height .6s ease, padding .4s ease;
+}
+
+.faq-answer p,
+.faq-answer ul{
+  padding:26px;
+  color:#444;
+  font-size:0.95rem;
+  line-height:1.8;
+}
+
+.faq-answer ul{
+  padding-left:45px;
+}
+
+.faq-answer li{
+  margin-bottom:8px;
+}
+
+/* Active */
+.faq-item.active .faq-answer{
+  max-height:500px;
+}
+
+.faq-item.active .arrow{
+  transform:rotate(-135deg);
+}
+
+/* =========================
+   DIFFERENT PROFESSIONAL COLORS
+========================= */
+
+.color-1{background:linear-gradient(135deg,#8b5cf6,#a78bfa);}
+.color-2{background:linear-gradient(135deg,#ec4899,#f9a8d4);}
+.color-3{background:linear-gradient(135deg,#6366f1,#93c5fd);}
+.color-4{background:linear-gradient(135deg,#9333ea,#c084fc);}
+
+
+/* Logo styling only */
+.logo{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:600;
+  font-size:1.1rem;
+  color:var(--gold);
+}
+
+.logo img{
+  width:38px;       /* moderate size */
+  height:auto;
+  object-fit:contain;
+}
+
+
+/* Connect Section */
+.connect-section{
+  background: white
+  );
+  padding: 90px 7%;
+}
+
+.connect-wrapper{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+/* Social */
+.connect-social h2,
+.connect-contact h2{
+  font-size:2rem;
+  margin-bottom:15px;
+  color:#4a235a;
+}
+
+.connect-social p{
+  margin-bottom:30px;
+  color:#555;
+}
+
+.social-links{
+  display:flex;
+  gap:25px;
+}
+
+.social-links a{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  color:#800080;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  transition:.35s ease;
+}
+
+.social-links a:hover{
+  transform:translateY(-6px) scale(1.05);
+  background:#800080;
+  color:#fff;
+}
+
+/* Contact */
+.connect-contact{
+  background:rgba(255,255,255,.75);
+  backdrop-filter: blur(12px);
+  border-radius:25px;
+  padding:45px;
+  box-shadow:0 20px 45px rgba(0,0,0,.12);
+}
+
+.contact-item{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  margin-bottom:18px;
+  color:#333;
+  font-size:1rem;
+}
+
+.contact-item i{
+  color:#c9a24d;
+  font-size:18px;
+}
+
+/* Responsive */
+@media(max-width:900px){
+  .connect-wrapper{
+    grid-template-columns:1fr;
+    text-align:center;
+  }
+
+  .social-links{
+    justify-content:center;
+  }
+
+  .contact-item{
+    justify-content:center;
+    text-align:left;
+  }
+}
+
+
+
+@media (max-width: 600px){
+
+  /* Reduce section padding */
+  .connect-section{
+    padding: 60px 5%;
+  }
+
+  /* Stack nicely */
+  .connect-wrapper{
+    gap:40px;
+  }
+
+  /* Headings */
+  .connect-social h2,
+  .connect-contact h2{
+    font-size:1.6rem;
+  }
+
+  .connect-social p{
+    font-size:.95rem;
+  }
+
+  /* Social icons */
+  .social-links{
+    gap:18px;
+  }
+
+  .social-links a{
+    width:48px;
+    height:48px;
+    font-size:20px;
+  }
+
+  /* Contact card fix */
+  .connect-contact{
+    padding:30px 22px;
+    border-radius:20px;
+  }
+
+  .contact-item{
+    font-size:.95rem;
+    justify-content:flex-start;
+  }
+
+  .contact-item span{
+    line-height:1.4;
+  }
+
+  .contact-item i{
+    font-size:16px;
+  }
+}
+
+@media (max-width:600px){
+  .connect-contact{
+    margin: 0 auto;
+  }
+}
+
+
+.site-footer{
+  background:#f9e6ec; /* soft pink */
+  padding:70px 7% 30px;
+  color:#333;
+}
+
+.footer-container{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+}
+
+.footer-logo{
+  width:60px;
+}
+
+.footer-brand h3{
+  margin-top:15px;
+  color:#000;
+}
+
+.site-footer h4{
+  margin-bottom:15px;
+  color:#000;
+}
+
+.footer-links ul{
+  list-style:none;
+  padding:0;
+}
+
+.footer-links li{
+  margin-bottom:10px;
+}
+
+.footer-links a{
+  color:#333;
+  text-decoration:none;
+  transition:.3s;
+}
+
+.footer-links a:hover{
+  color:#c9a24d;
+}
+
+.footer-contact p{
+  margin-bottom:10px;
+  font-size:.95rem;
+}
+
+.footer-contact i{
+  margin-right:8px;
+  color:#c9a24d;
+}
+
+.social-icons{
+  display:flex;
+  gap:15px;
+}
+
+.social-icons a{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:#c9a24d;
+  font-size:18px;
+  box-shadow:0 6px 18px rgba(0,0,0,.1);
+  transition:.3s;
+}
+
+.social-icons a:hover{
+  background:#c9a24d;
+  color:#fff;
+  transform:translateY(-4px);
+}
+
+.footer-line{
+  margin:50px 0 20px;
+  border:none;
+  height:1px;
+  background:rgba(0,0,0,.15);
+}
+
+.footer-bottom{
+  text-align:center;
+  font-size:.9rem;
+}
+
+.designer{
+  color:#c9a24d;
+  text-decoration:none;
+  font-weight:500;
+}
+
+.designer:hover{
+  text-decoration:underline;
+}
+
+/* Mobile fix */
+@media(max-width:600px){
+  .site-footer{
+    text-align:center;
+  }
+
+  .social-icons{
+    justify-content:center;
+  }
+}
+
+
+.about-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:10px;
+  margin-top:25px;
+  padding:14px 28px;
+  border-radius:30px;
+  background:#c9a24d; /* gold */
+  color:#fff;
+  font-weight:500;
+  font-size:0.95rem;
+  text-decoration:none;
+  box-shadow:0 12px 25px rgba(0,0,0,0.15);
+  transition:all .3s ease;
+}
+
+.about-btn i{
+  transition:transform .4s ease;
+  animation:arrowMove 1.5s infinite;
+}
+
+.about-btn:hover{
+  transform:translateY(-3px);
+  opacity:0.9;
+}
+
+/* Arrow animation */
+@keyframes arrowMove{
+  0%{transform:translateX(0);}
+  50%{transform:translateX(6px);}
+  100%{transform:translateX(0);}
+}
+
+
+/* PRELOADER */
+#preloader{
+  position:fixed;
+  inset:0;
+  background:#f9e6ec; /* brand pink */
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.heartbeat-box{
+  text-align:center;
+}
+
+.heartbeat-box i{
+  font-size:64px;
+  color:#800080; /* brand purple */
+  animation:heartbeat 1.8s ease-in-out infinite;
+}
+
+.heartbeat-box p{
+  margin-top:15px;
+  font-size:0.95rem;
+  color:#444;
+  letter-spacing:0.5px;
+}
+
+/* HEARTBEAT ANIMATION */
+@keyframes heartbeat{
+  0%{transform:scale(1);opacity:.8;}
+  25%{transform:scale(1.15);opacity:1;}
+  50%{transform:scale(1);opacity:.9;}
+  75%{transform:scale(1.12);opacity:1;}
+  100%{transform:scale(1);opacity:.8;}
+}
+  </style>  
+</head>  
+<body>  
+<!-- Preloader -->
+<div id="preloader">
+  <div class="heartbeat-box">
+    <i class="fa-solid fa-heart-pulse"></i>
+    <p>Tender Care Surrogacy</p>
+  </div>
+</div>
+<!-- Header -->    <header class="header">  
+<div class="logo">
+  <img src="logo.png" alt="TenderCare Surrogacy Logo">
+  <span>TenderCare Surrogacy</span>
+</div>
+    <nav class="nav" id="navMenu">  
+      <a href="#home">Home</a>  
+      <a href="#about">About</a>  
+      <a href="#services">Services</a>  
+      <a href="#process">Process</a>  
+      <a href="#why">Why Us</a>  
+      <a href="#faq">FAQs</a>  
+      <a href="#connect">Contact</a>  
+    </nav>  
+    <div class="hamburger" id="hamburger">  
+      <span></span><span></span><span></span>  
+    </div>  
+    
+  </header>    <!-- Hero -->    <section class="hero fade" id="home">
+  <h1 class="hero-animate from-left" id="hero-title">Helping You Build Your Family Safely, Legally & Ethically</h1>
+  <p class="hero-animate from-right" id="hero-text">
+    Tender care Surrogacy Agency provides guided surrogacy and fertility support with transparency, medical oversight, and emotional care for all parties involved.
+  </p>
+  <div class="hero-actions">
+    <a href="https://wa.me/2347058861775" class="btn btn-gold hero-animate from-top">Book a Consultation</a>
+    <a href="tel:08148581560" class="btn btn-outline hero-animate from-bottom">Call Us</a>
+  </div>
+</section>
+
+<!-- About -->    
+<section class="about fade" id="about">
+  <div class="about-container">
+    <div class="about-text">
+      <h2>About Us</h2>
+      <p>
+        Tender care Surrogacy Agency is a professional surrogacy and fertility support agency dedicated to helping intended parents build families safely, legally, and ethically. We offer structured guidance, medical coordination, legal documentation support, and emotional care for both intended parents and surrogate mothers.
+      </p>
+      <a href="more.html" class="about-btn">
+  Learn More <i class="fas fa-arrow-right"></i>
+</a>
+    </div>
+    <div class="about-image">
+      <img src="family.jpg" alt="Family image">
+    </div>
+  </div>
+</section>
+  
+  <!-- Services -->    
+  <section class="fade" id="services">
+  <h2 style="text-align:center;">Our Services</h2>
+
+  <div class="services-grid">
+    <div class="service-card from-left">
+      <i class="fas fa-user-shield service-icon"></i>
+      <h3>Surrogate Mother Sourcing</h3>
+      <p>Careful identification and basic screening of surrogate mothers.</p>
+    </div>
+
+    <div class="service-card from-top">
+      <i class="fas fa-comments-heart service-icon"></i>
+      <h3>Surrogacy Counseling</h3>
+      <p>Professional guidance and emotional support throughout the journey.</p>
+    </div>
+
+    <div class="service-card from-right">
+      <i class="fas fa-hospital-user service-icon"></i>
+      <h3>Medical Coordination</h3>
+      <p>Seamless coordination with certified fertility hospitals.</p>
+    </div>
+
+    <div class="service-card from-left">
+      <i class="fas fa-file-contract service-icon"></i>
+      <h3>Legal Documentation</h3>
+      <p>Guidance through legal processes and required documentation.</p>
+    </div>
+
+    <div class="service-card from-bottom">
+      <i class="fas fa-heartbeat service-icon"></i>
+      <h3>Pregnancy Monitoring</h3>
+      <p>Ongoing pregnancy care and progress monitoring.</p>
+    </div>
+
+    <div class="service-card from-right">
+      <i class="fas fa-baby service-icon"></i>
+      <h3>Post-Birth Support</h3>
+      <p>Support and transition assistance after delivery.</p>
+    </div>
+  </div>
+</section>
+
+<section class="process-section fade" id="process">
+  <h2 class="section-title">How It Works</h2>
+
+  <div class="steps">
+    <div class="step">
+      <span>1</span>
+      <h4>Initial Consultation</h4>
+      <p>We begin with a confidential discussion to understand your needs and expectations.</p>
+    </div>
+
+    <div class="step">
+      <span>2</span>
+      <h4>Matching & Screening</h4>
+      <p>Careful matching and basic screening ensure compatibility and ethical standards.</p>
+    </div>
+
+    <div class="step">
+      <span>3</span>
+      <h4>Medical & Legal Process</h4>
+      <p>We coordinate medical procedures and guide you through proper documentation.</p>
+    </div>
+
+    <div class="step">
+      <span>4</span>
+      <h4>Pregnancy Monitoring</h4>
+      <p>Continuous support and coordination throughout the pregnancy journey.</p>
+    </div>
+
+    <div class="step">
+      <span>5</span>
+      <h4>Birth & Post-Delivery Support</h4>
+      <p>Support during delivery and assistance with post-birth transition.</p>
+    </div>
+  </div>
+</section>
+
+<section class="why fade" id="why">
+  <h2 class="section-title">Why Choose Us</h2>
+
+  <div class="why-grid">
+
+    <div class="why-card">
+      <div class="why-inner">
+        <div class="why-front" style="background-image:url('https://images.unsplash.com/photo-1607746882042-944635dfe10e');">
+          <div class="why-overlay">
+            <h3>Ethical & Confidential</h3>
+          </div>
+        </div>
+        <div class="why-back">
+          <p>We uphold strict ethical standards and absolute confidentiality, protecting the dignity and privacy of all parties.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-card">
+      <div class="why-inner">
+        <div class="why-front" style="background-image:url('medic.jpg');">
+          <div class="why-overlay">
+            <h3>Medical & Legal Oversight</h3>
+          </div>
+        </div>
+        <div class="why-back">
+          <p>We work alongside certified fertility clinics and provide structured guidance through medical and legal processes.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-card">
+      <div class="why-inner">
+        <div class="why-front" style="background-image:url('https://images.unsplash.com/photo-1600880292203-757bb62b4baf');">
+          <div class="why-overlay">
+            <h3>Transparent Communication</h3>
+          </div>
+        </div>
+        <div class="why-back">
+          <p>Clear processes and honest communication keep you informed and confident at every stage.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-card">
+      <div class="why-inner">
+        <div class="why-front" style="background-image:url('https://images.unsplash.com/photo-1607748851687-ba9a10438621');">
+          <div class="why-overlay">
+            <h3>Emotional Support</h3>
+          </div>
+        </div>
+        <div class="why-back">
+          <p>We provide compassionate emotional support for intended parents and surrogate mothers throughout the journey.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<section class="faq fade" id="faq">
+  <h2 class="section-title">Frequently Asked Questions</h2>
+
+  <div class="faq-container">
+
+    <div class="faq-item color-1">
+      <button class="faq-question">
+        <span>Do you have scheduled appointments for surrogate mothers?</span>
+        <i class="arrow"></i>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Yes. All surrogate mothers go through scheduled appointments, including
+          counseling sessions, medical evaluations, and follow-up visits coordinated
+          by our agency in collaboration with fertility clinics.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item color-2">
+      <button class="faq-question">
+        <span>Do you assist intended parents with international travel after delivery?</span>
+        <i class="arrow"></i>
+      </button>
+      <div class="faq-answer">
+        <p>
+          Yes. We work with experienced legal professionals who assist intended parents
+          with post-delivery legal documentation and processes required for international
+          travel, subject to applicable laws and regulations.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item color-3">
+      <button class="faq-question">
+        <span>How do you source your surrogate mothers?</span>
+        <i class="arrow"></i>
+      </button>
+      <div class="faq-answer">
+        <p>
+          We source surrogate mothers through structured outreach on our social media
+          platforms and trusted referrals. Interested candidates are carefully guided
+          through an initial screening process before medical and counseling assessments.
+        </p>
+      </div>
+    </div>
+
+    <div class="faq-item color-4">
+      <button class="faq-question">
+        <span>What are the requirements to become a surrogate mother?</span>
+        <i class="arrow"></i>
+      </button>
+      <div class="faq-answer">
+        <ul>
+          <li>Must have successfully given birth before</li>
+          <li>Must be below 31 years old</li>
+          <li>Must have a positive Rhesus factor (Negative Rhesus not acceptable)</li>
+          <li>Must have a reliable guarantor and valid national ID</li>
+          <li>Must be medically and psychologically fit</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="connect-section fade" id="connect">
+  <div class="connect-wrapper">
+
+    <!-- Left: Social -->
+    <div class="connect-social">
+      <h2>Connect With Us</h2>
+      <p>Follow us for updates and insights.</p>
+
+      <div class="social-links">
+        <a href="https://www.instagram.com/surrogatemotherinlagos?igsh=eGd3ZWxzc2hndnVy" target="_blank" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+
+        <a href="https://www.facebook.com/share/1CPZ8fDURG/" target="_blank" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <a href="https://www.tiktok.com/@surrogatemotherinlagos?_r=1&_t=ZS-93Rsp413ZUC" target="_blank" aria-label="TikTok">
+          <i class="fab fa-tiktok"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Right: Contact -->
+    <div class="connect-contact">
+      <h2>Ready to start your journey?</h2>
+
+      <div class="contact-item">
+        <i class="fab fa-whatsapp"></i>
+        <span>+2347058861775</span>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-phone-alt"></i>
+        <span>08148581560</span>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <span>tendersurrogacyagency@gmail.com</span>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <span>Lagos: 5 David Sholarin Street, Ikorodu Benson</span>
+      </div>
+
+      <div class="contact-item">
+        <i class="fas fa-location-dot"></i>
+        <span>Ogun: Ibara Housing Estate, GRA Abeokuta</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<footer class="site-footer">
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <img src="logo.png" alt="TenderCare Logo" class="footer-logo">
+      <h3>TenderCare Surrogacy</h3>
+      <p>Ethical, transparent and compassionate surrogacy support.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-links">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-contact">
+      <h4>Contact</h4>
+      <p><i class="fas fa-phone"></i> 08148581560</p>
+      <p><i class="fab fa-whatsapp"></i> +23407058861775</p>
+      <p><i class="fas fa-envelope"></i> tendersurrogacyagency@gmail.com</p>
+    </div>
+
+    <!-- Social -->
+    <div class="footer-social">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+        <a href="https://www.instagram.com/surrogatemotherinlagos?igsh=eGd3ZWxzc2hndnVy" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/share/1CPZ8fDURG/" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.tiktok.com/@surrogatemotherinlagos?_r=1&_t=ZS-93Rsp413ZUC" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+
+  </div>
+
+  <hr class="footer-line">
+
+  <div class="footer-bottom">
+    <p>
+      © 2026 TenderCare Surrogacy. All Rights Reserved. <br>
+      Designed by 
+      <a href="https://vorathel.vercel.app/" target="_blank" class="designer">
+        Vorathel
+      </a>
+    </p>
+  </div>
+</footer>
+
+  <script>  
+    // Hamburger toggle  
+    const hamburger = document.getElementById('hamburger');  
+    const navMenu = document.getElementById('navMenu');  
+    hamburger.addEventListener('click',()=>{navMenu.classList.toggle('show');});  
+  
+    // Active link on scroll  
+    const sections = document.querySelectorAll('section');  
+    const navLinks = document.querySelectorAll('.nav a');  
+    window.addEventListener('scroll',()=>{  
+      let current='';  
+      sections.forEach(section=>{  
+        const sectionTop = section.offsetTop - 100;  
+        if(scrollY >= sectionTop) current = section.getAttribute('id');  
+      });  
+      navLinks.forEach(a=>{  
+        a.classList.remove('active');  
+        if(a.getAttribute('href') === '#'+current){a.classList.add('active');}  
+      });  
+    });  
+  
+  
+    const fades = document.querySelectorAll('.fade');  
+    const observer = new IntersectionObserver(entries => {  
+      entries.forEach(entry => {  
+        if(entry.isIntersecting){entry.target.classList.add('show');}  
+      });  
+    },{threshold:0.2});  
+    fades.forEach(f => observer.observe(f));  
+  </script>  
+  
+  
+  <script>
+document.addEventListener("DOMContentLoaded",()=>{
+  const preloader = document.getElementById("preloader");
+
+  setTimeout(()=>{
+    preloader.style.opacity = "0";
+    preloader.style.pointerEvents = "none";
+
+    setTimeout(()=>{
+      preloader.style.display = "none";
+    },400);
+  },7000); // short delay so animation shows briefly
+});
+</script>
+
+</body>  
+</html> 
